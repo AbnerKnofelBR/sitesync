@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Planos e Preços</title>
+    <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="C:\Users\Abner Knofel\Documents\Site Sync\site\images\favicon_png.png" type="C:\Users\Abner Knofel\Documents\Site Sync\site\images\favicon_png.png">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CMuli:100,300,400,600,800">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
+	  
+        .plan-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .plan {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .plan h2 {
+            margin: 0 0 10px;
+            font-size: 24px;
+        }
+        .plan ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+        }
+        .plan ul li {
+            margin-bottom: 10px;
+        }
+        .plan .price {
+            font-size: 32px;
+            color: #333;
+            margin: 0;
+        }
+        .plan .period {
+            font-size: 14px;
+            color: #777;
+            margin: 5px 0 20px;
+        }
+        .plan button {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .plan button:hover {
+            background-color: #0056b3;
+        }  
+        {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+.card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.destaque {
+    border: 2px solid #f39c12;
+    background-color: #fdf2d8;
+}
+
+.destaque:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.ce-correct {
+    color: #28a745;
+    font-size: 18px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+	*/  
+
+{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 40px;
+}
+
+.pricing-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--bg-color, #ffffff);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 250px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.4em;
+}
+
+.card ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.card ul li {
+  margin: 8px 0;
+  color: #444;
+}
+
+.price-section {
+  margin-bottom: 15px;
+}
+
+.price-title {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.price {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #222;
+}
+
+.title {
+  font-size: 1.8em;
+  font-weight: bold;
+  position: center;
+  color: #222;
+}
+
+.price span {
+  font-size: 0.8em;
+  color: #666;
+  margin-left: 4px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.destaque {
+  border: 2px solidrgb(255, 145, 0);
+  position: relative;
+}
+
+.destaque .badge {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background-color:rgb(255, 145, 0);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+.main-title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #333;
+}
+.main-description {
+  text-align: justify; 
+  font-size: 1em;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  line-height: 1.5;
+}
+
+.btn-pulsante {
+  background-color: #ff6600; /* laranja */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  transition: background-color 0.3s ease;
+}
+
+.btn-pulsante:hover {
+  background-color: #e65c00;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 102, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 102, 0, 0);
+  }
+}
+
+.btn-pulsante {
+  background-color: #ff6600; /* laranja */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  transition: background-color 0.3s ease;
+}
+
+
+	  </style>
+  </head>
+  <body>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="preloader" id="loading">
+      <div class="preloader-body">
+        <div id="loading-center-object">
+          <div class="object" id="object_four"></div>
+          <div class="object" id="object_three"></div>
+          <div class="object" id="object_two"></div>
+          <div class="object" id="object_one"></div>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <!-- Page Header--><a class="banner banner-top" href="form.html" target="_blank"><img src="images/bannertop3.png" alt=""/></a>
+      <header class="section page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-modern" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="10px" data-xl-stick-up-offset="10px" data-xxl-stick-up-offset="10px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-main">
+              <!-- RD Navbar Panel-->
+              <div class="rd-navbar-panel">
+                <!-- RD Navbar Toggle-->
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <div class="rd-navbar-brand"><a class="brand" href="index.html"><img src="images/logosyncsolor.png" alt="" width="148" height="31"/></a>
+                </div>
+              </div>
+              <div class="rd-navbar-nav-wrap">
+                <!-- RD Navbar Nav-->
+                <ul class="rd-navbar-nav">
+                  <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="sobre-a-sync.html">Sobre</a>
+                  </li>               
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="soluções.html">Soluções</a>
+                  </li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="planos-e-preços.html">Planos e Preços</a>
+                  </li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="https://help.syncsoftware.com.br/">Blog</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="rd-navbar-element"><a class="button button-sm button-header button-winona" href="https://bluesoftwares.com.br/index.php/signin">Área do Cliente</a>
+              </div>
+              <div class="rd-navbar-dummy"></div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <section class="breadcrumbs-custom">
+        <div class="breadcrumbs-custom-main context-dark">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-xl-9">
+                <h2 class="breadcrumbs-custom-title">Planos e Preços</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="breadcrumbs-custom-aside">
+          <div class="container">
+            <ul class="breadcrumbs-custom-path">
+              <li><a href="index.html">Home</a></li>
+              <li class="active">Planos e Preços</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <h2 class="main-title">Escolha o plano ideal para a sua empresa</h2>
+
+<!-- Planos e Preços -->
+      <div class="pricing-container">
+    
+    <!-- Card 1 -->
+    <div class="card" style="--bg-color: #f0f4ff;">
+     <h2>Start</h2>
+        <div class="price-section">
+        <div class="price">Grátis</div>
+      </div>
+      <button>Assine agora</button>
+      <p></p>
+      <ul>
+        <li><span class="ce-correct">✔️</span> NF-e / NFC-e</li>
+        <li><span class="ce-correct">✔️</span> 20 emissões de NF mês</li>
+        <li><span class="ce-correct">✔️</span> 2 Licenças</li>
+        <li><span class="ce-correct">✔️</span> Cadastro de Clientes</li>
+        <li><span class="ce-correct">✔️</span> Cadastro de Produtos</li>
+        <li><span class="ce-correct">✔️</span> Suporte via WhatsApp</li>
+      </ul>
+      <h5>Por que Start?</h5>
+      <p></p>
+      <p class="main-description">
+        ERP gratuito ideal para MEIs ou empresas recém-abertas. Organize seus cadastros, 
+        vendas e emissão de NF de forma simples e eficiente, sem custos.
+      </p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card" style="--bg-color: #f0f4ff;">
+      <h2>Start Plus</h2>
+      <div class="price-section">
+        <div class="price">R$ 49<span>/mensal</span></div>
+      </div>
+      <button>30 dias Grátis</button>
+      <p></p>
+      <ul>
+        <li><span class="ce-correct">✔️</span> NF-e/NFC-e/NFS-e</li>
+        <li><span class="ce-correct">✔️</span> 50 emissões de NF mês</li>
+        <li><span class="ce-correct">✔️</span> 5 Licenças</li>
+        <li><span class="ce-correct">✔️</span> 5 módulos</li>
+        <li><span class="ce-correct">✔️</span> PDV Integrado com PIX</li>
+        <li><span class="ce-correct">✔️</span> Suporte Humanizado</li>
+      </ul>
+      <h5>Por que Start Plus?</h5>
+      <p></p>
+      <p class="main-description">
+        Plano Start Plus para pequenas empresas: controle financeiro, 
+        emissão de notas e gestão de estoque com praticidade e custo acessível.
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card destaque" style="--bg-color:rgb(255, 232, 190);">
+      <!-- <div class="badge">Melhor custo-benefício</div> -->
+      <div class="badge">Melhor custo-benefício</div>
+      <h2>Premium</h2>
+      <div class="price-section">
+        <div class="price">R$ 79<span>/mensal</span></div>
+      </div>
+      <button class="btn-pulsante">30 dias Grátis</button>
+      <p></p>
+      <ul>
+        <li><span class="ce-correct">✔️</span> Todos modelos de NF-e</li>
+        <li><span class="ce-correct">✔️</span> Emissão Ilimitada NF</li>
+        <li><span class="ce-correct">✔️</span> 10 Licenças</li>
+        <li><span class="ce-correct">✔️</span> 10 módulos</li>
+        <li><span class="ce-correct">✔️</span> Integrado com WhatsApp</li>
+        <li><span class="ce-correct">✔️</span> Emissão de Boletos</li>
+        <li><span class="ce-correct">✔️</span> PDV Integrado com PIX</li>
+        <li><span class="ce-correct">✔️</span> Aplicativos Integrado</li>
+        <li><span class="ce-correct">✔️</span> Suporte Humanizado</li>
+      </ul>
+      <h5>Por que Premuim?</h5>
+      <p></p>
+      <p class="main-description">
+        Ideal para pequenas e médias empresas que buscam mais controle e automação. 
+        Recursos avançados de gestão, emissão de boletos, aplicativos, relatórios e integração.
+      </p>
+    </div>
+    <!-- Card 4 -->
+    <div class="card" style="--bg-color: #f0f4ff;">
+      <h2>Premium Pro</h2>
+        <div class="price-section">
+        <div class="price">R$ 99<span>/mensal</span></div>
+      </div>
+      <button>30 dias Grátis</button>
+      <p></p>
+      <ul>
+        <li><span class="ce-correct">✔️</span> Todos modelos de NF-e</li>
+        <li><span class="ce-correct">✔️</span> Emissão Ilimitada NF</li>
+        <li><span class="ce-correct">✔️</span> Licenças Ilimitadas</li>
+        <li><span class="ce-correct">✔️</span> Todos os Módulos</li>
+        <li><span class="ce-correct">✔️</span> Integrado com WhatsApp</li>
+        <li><span class="ce-correct">✔️</span> Emissão de Boletos</li>
+        <li><span class="ce-correct">✔️</span> PDV Integrado com PIX</li>
+        <li><span class="ce-correct">✔️</span> Aplicativos Integrado</li>
+        <li><span class="ce-correct">✔️</span> Sync Commander</li>
+        <li><span class="ce-correct">✔️</span> Sync Cloud</li>
+        <li><span class="ce-correct">✔️</span> Sync CRM</li>
+        <li><span class="ce-correct">✔️</span> Suporte Humanizado</li>
+        <li><span class="ce-correct">✔️</span> Suporte Prioritário</li>
+      </ul>
+      <h5>Por que Premuim Pro?</h5>
+      <p></p>
+      <p class="main-description">
+        Para empresas em crescimento que precisam de alto desempenho. 
+        Inclui funcionalidades completas, suporte prioritário e dashboard gerencial.
+      </p>
+    </div>
+      
+      <!-- Cards
+      <section class="section section-lg">
+      <div class="card-container">
+    <div class="card">
+        <div class="icon">
+            <img src="https://img.icons8.com/ios/50/000000/shopping-cart.png" alt="Produto 1">
+        </div>
+        <h3>Start</h3>
+        <p><span class="ce-correct">✔️</span> Alta qualidade e durabilidade.</p>
+        <button>Grátis</button>
+    </div>
+
+    <div class="card"> OLD
+        <div class="icon">
+            <img src="https://img.icons8.com/ios/50/000000/shopping-cart.png" alt="Produto 2">
+        </div>
+        <h3>Start Plus</h3>
+        <p><span class="ce-correct">✔️</span> Tecnologia de ponta com suporte excelente.</p>
+        <button>Comprar</button>
+    </div>
+
+        <div class="card destaque">
+        <div class="icon">
+            <img src="https://img.icons8.com/ios/50/000000/price-tag.png" alt="Custo-benefício">
+        </div>
+        <h3>Premium</h3>
+        <p><span class="ce-correct">✔️</span> Produto com alta performance e preço acessível.</p>
+        <button>Comprar</button>
+    </div>
+
+    <div class="card">
+        <div class="icon">
+            <img src="https://img.icons8.com/ios/50/000000/shopping-cart.png" alt="Produto 3">
+        </div>
+        <h3>Premium Plus</h3>
+        <p><span class="ce-correct">✔️</span> Praticidade e eficiência em um único produto.</p>
+        <button>Comprar</button>
+    </div>
+</div>
+      
+		  -->
+      
+   <!-- <div class="plan-container">
+        <div class="plan">
+            <h2>Start</h2>
+            <ul>
+                <li>1 Filial</li>
+                <li>3 Usuários</li>
+				<li>4 Módulos</li>
+                <li>100 NF-s / mês</li>
+				<li>Suporte via WhatsApp</li>
+				<li>7 dias Grátis</li>
+            </ul>
+            <p class="price">R$ 59,90</p>
+            <p class="period">Por Mês</p>
+            <button>Adquirir</button>
+        </div>
+        <div class="plan">
+            <h2>Premium Pro</h2>
+            <ul>
+                <li>Filiais Ilimitadas</li>
+                <li>Usuários Ilimitados</li>
+				<li>Módulos Ilimitados</li>
+                <li>NF-e Ilimitadas</li>
+				<li>Aplicativos Grátis</li>
+				<li>Sync Commander</li>
+				<li>Sync CRM</li>
+				<li>20GB Sync Cloud</li>
+				<li>Suporte Prioritário</li>
+				<li>30 dias Grátis</li>
+            </ul>
+            <p class="price">R$ 199,90</p>
+            <p class="period">Por Mês</p>
+            <button>Adquirir</button>
+        </div>
+        <div class="plan">
+            <h2>Premium</h2>
+            <ul>
+                <li>3 Filiais</li>
+                <li>10 Usuários</li>
+				<li>10 Módulos</li>
+                <li>NF-e Ilimitadas</li>
+				<li>Sync Commander</li>
+				<li>10GB Sync Cloud</li>
+				<li>Suporte Premium</li>
+				<li>30 dias Grátis</li>
+            </ul>
+            <p class="price">R$ 149,90</p>
+            <p class="period">Por Mês</p>
+            <button>Adquirir</button>
+        </div>
+    </div> -->
+		  <p> </p>
+
+		  
+	 <section class="section footer-classic"><a class="banner" href="https://bluesoftwares.com.br/index.php/signin" target="_blank">
+		<img src="images/bannersuporte.png" alt=""/></a>
+        <div class="footer-classic-main">
+        </div>
+          <div class="container">
+            <div class="row row-50 justify-content-lg-between">
+              <div class="col-sm-7 col-lg-3 col-xl-3"><a class="brand" href="index.html"><img src="images/logosync_black.png" alt="" width="220" height="31"/></a>
+		 <p><span style="max-width: 250px;">Agende uma apresentação <b>Gratuita</b> &nbsp;</span></p>
+				  <!-- Google Calendar (Inicio) -->
+       <p>
+          <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+            <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+            <script>
+              (function() {
+                var target = document.currentScript;
+                  window.addEventListener('load', function() {
+                  calendar.schedulingButton.load({
+                  url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ31afimyOHYvaB4MnqsIsvfz5udVD44YPHRCnH4Dv8hM9v1W4JVodqL0H2GXkwX6SmiGYWQp_uk?gv=true',
+                  color: '#F4511E',
+                  label: "Agendar Apresenta\xE7\xE3o",
+                  target,
+                  });
+                   });
+                    })();
+             </script>
+		  </p>
+              </div>
+   <!--Google Calendar (Fim) -->
+              <div class="col-sm-5 col-lg-3 col-xl-2">
+                <h4 class="footer-classic-title">Sobre a Sync</h4>
+                <ul class="list footer-classic-list">
+                  <li><a href="about-us.html">Sobre</a></li>
+                  <li><a href="https://www.linkedin.com/company/sync-software/">Vagas</a></li>
+                  <li><a href="https://help.syncsoftware.com.br/">Blog</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-7 col-lg-5 col-xl-4">
+                <h4 class="footer-classic-title">Mapa do Site</h4>
+                <ul class="list footer-classic-list footer-classic-list_2-cols">
+                  <li><a href="https://bluesoftwares.com.br/index.php/signin">Área do Cliente</a></li>
+                  <li><a href="planos-e-preços.html">Preços e Planos</a></li>
+                  <li><a href="links.html">Links Úteis</a></li>
+                  <li><a href="downloads.html">Downloads</a></li>
+                  <li><a href="privacidade.html">Politicas de Privacidade</a></li>
+                  <li><a href="cookies.html">Politicas de Cookies</a></li>
+                  <li><a href="contact-us.html">Fale com a Sync</a></li>
+                </ul>
+              </div>
+              <div class="col-sm-5 col-lg-9 col-xl-2">
+                <h4 class="footer-classic-title">Nossos Contatos</h4>
+                <div class="row row-20 row-sm-35">
+                  <div class="col-6 col-sm-12 col-lg-8 col-xl-12">
+                    <div class="row row-10 text-default">
+                      <div class="col-lg-6 col-xl-12">
+					  <div class="col-lg-6 col-xl-12"><a class="big" href="tel:#"><b>31 4062-7685</b></a></div>
+                      </div>
+                        <p><a href="mailto: comercial@syncsoftware.com.br">comercial@syncsoftware.com.br</a>
+						<a href="mailto: suporte@syncsoftware.com.br">suporte@syncsoftware.com.br</a>
+						</p>
+						<p><span style="max-width: 250px;"><b>CNPJ: </b>50.828.723/0001-51&nbsp;</span></p>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-12 col-lg-4 col-xl-12 text-right text-sm-left">
+                    <div class="group group-xs"><a class="link link-social-1 mdi mdi-whatsapp" href="#"></a><a class="link link-social-1 mdi mdi-facebook" href="#"></a><a class="link link-social-1 mdi mdi-instagram" href="#"></a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="footer-classic-aside">
+          <div class="container">
+            <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Sync Softwares LTDA</span>. Todos os Diretos Reservados. Desenvolvido por <a href="https://www.syncsoftware.com.br">Sync Software</a></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
